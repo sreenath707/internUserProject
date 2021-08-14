@@ -6,6 +6,8 @@ const mongoose = require('mongoose');
 const users = require('./models/userModel');
 const jwt = require('jsonwebtoken');
 
+const port = process.env.port;
+
 const JWT_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
 
 mongoose.connect('mongodb+srv://sreenath:1234@cluster0.x9z2p.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true})
@@ -76,7 +78,7 @@ app.post('/login',async (req,res)=>{
 })
 
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log('listening at post  : 3000');
 })
 
